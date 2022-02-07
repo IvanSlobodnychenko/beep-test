@@ -1,0 +1,64 @@
+@use '../mixins/font';
+@import '../mixins/aspect-ratio';
+
+.product {
+  display: flex;
+  background: #ffff;
+  border: 0.25px solid #C4C4C4;
+  border-radius: 10px;
+  font-size: 12px;
+  overflow: hidden;
+
+  & + & {
+    margin-top: 20px;
+  }
+
+  &__media {
+    flex-basis: 45%;
+    @include aspect-ratio(8, 7);
+    overflow: hidden;
+  }
+
+  &__image {
+    position: absolute;
+    min-width: 1000%;
+    min-height: 1000%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(0.1);
+  }
+
+  &__text {
+    flex-grow: 1;
+    padding: 15px 10px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__title {
+    @include font.roboto;
+  }
+
+  &__description {
+    @include font.roboto;
+    font-size: 16px;
+    font-weight: 100;
+  }
+
+  &__footer {
+    display: flex;
+    justify-content: space-between;
+    flex-grow: 1;
+    align-items: flex-end;
+  }
+
+  &__detail {
+    font-weight: 400;
+    font-size: 6px;
+  }
+
+  &__value {
+    font-weight: 700;
+    font-size: 11px;
+  }
+}

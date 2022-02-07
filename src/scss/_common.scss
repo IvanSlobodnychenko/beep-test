@@ -1,0 +1,35 @@
+@use 'mixins/font';
+
+
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  background: #FFFFFF;
+  color: #002e5d;
+  @include font.nunito;
+}
+
+.container {
+  padding: 0 24px;
+}
+
+.section {
+  padding: 30px 0;
+}
+
+/* helpers */
+.upper {
+  text-transform: uppercase;
+}
+
+.align-right {
+  text-align: right;
+}
+/* helpers [End] */
